@@ -9,9 +9,7 @@
 The project state is forever.</i>
 </p>
 
-⸻
-
-⸻
+---
 
 Why CYSSI?
 
