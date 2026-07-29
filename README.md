@@ -1,4 +1,4 @@
-<img src="assets/banner.png" alt="CYSSI Framework" width="100%">
+<img src="assets/banner.PNG" alt="CYSSI Framework" width="100%">
 </p>
 <h1 align="center">CYSSI Framework</h1>
 <p align="center">
