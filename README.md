@@ -44,8 +44,7 @@ The conversation transports knowledge.
 The snapshot preserves knowledge.
 
 The project—not the conversation—is the single authoritative source of truth.
-
-⸻
+---
 
 Architecture
 
@@ -77,9 +76,9 @@ Directive Processing        Information Extraction
                     ▼
           Next Conversation
 
-⸻
+---
 
-Philosophy
+# Philosophy
 
 CYSSI is built around a simple observation:
 
@@ -89,23 +88,24 @@ CYSSI reproduces projects.
 
 This distinction is the foundation of the framework.
 
-⸻
+---
 
-Core Components
+# Core Components
 
-Component	Purpose
-Context Bubble	Defines the active working context
-Project Contract	Defines immutable project rules
-Locked Facts	Canonical project constants
-Conversation Compiler	Extracts structured knowledge
-CYSSI Directive Language (CDL)	Explicit project control
-Semantic Compression	Compresses without losing meaning
-Context Snapshot	Canonical project representation
-Conversation Lifecycle	Defines the project workflow
+| Component | Purpose |
+|-|-|
+|Context Bubble | Defines the active working context |
+|Project Contract | Defines immutable project rules |
+|Locked Facts | Canonical project constants |
+|Conversation Compiler|Extracts structured knowledge|
+|CYSSI Directive Language (CDL)|Explicit project control|
+|Semantic Compression|Compresses without losing meaning|
+|Context Snapshot|Canonical project representation|
+|Conversation Lifecycle|Defines the project workflow|
 
-⸻
+---
 
-CYSSI Directive Language (CDL)
+# CYSSI Directive Language (CDL)
 
 The Directive Language allows users to explicitly modify the project state.
 
@@ -119,9 +119,9 @@ Examples:
 
 Directives always have higher priority than conversational inference.
 
-⸻
+---
 
-Example Snapshot
+# Example Snapshot
 
 snapshot:
   id: S0001
@@ -135,7 +135,7 @@ decision_log:
   - id: D0001
     decision: Git is used as version control.
 
-⸻
+---
 
 Project Workflow
 
@@ -164,35 +164,34 @@ Load Snapshot
 
 Repeat indefinitely.
 
-⸻
+---
 
-Repository Structure
+# Repository Structure
 
-CYSSI/
-├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
-│
-├── docs/
-│   ├── Introduction.md
-│   ├── Architecture.md
-│   ├── Project_Contract.md
-│   ├── CDL.md
-│   ├── Snapshots.md
-│   ├── Best_Practices.md
-│   └── FAQ.md
-│
-├── examples/
-│   ├── example_snapshot.yaml
-│   └── hello_cyssi/
-│
-└── schema/
-    ├── snapshot.schema.json
-    └── snapshot.schema.yaml
+### CYSSI/
+- README.md
+- LICENSE
+- CONTRIBUTING.md
 
-⸻
+### docs/
+- Introduction.md
+- Architecture.md
+- Project_Contract.md
+- CDL.md
+- Snapshots.md
+- Best_Practices.md
+- FAQ.md
 
-Roadmap
+### examples/
+- example_snapshot.yaml
+- hello_cyssi/
+### schema/
+- snapshot.schema.json
+- snapshot.schema.yaml
+
+---
+
+# Roadmap
 
 Completed
 
@@ -216,9 +215,9 @@ Planned
 * ⬜ VSCode Extension
 * ⬜ SDK
 
-⸻
+---
 
-Design Philosophy
+# Design Philosophy
 
 CYSSI follows six fundamental principles:
 
@@ -229,7 +228,7 @@ CYSSI follows six fundamental principles:
 * Human-readable and machine-readable
 * Model independent
 
-⸻
+---
 
 Project Status
 
@@ -241,9 +240,9 @@ Current Version
 
 0.6.0
 
-⸻
+---
 
-Contributing
+# Contributing
 
 Contributions are welcome.
 
@@ -251,15 +250,15 @@ Ideas, implementations, documentation improvements and discussions are encourage
 
 Please read the documentation before submitting changes.
 
-⸻
+---
 
-License
+# License
 
 This project is licensed under the GNU General Public License v3.0 (GPL-3.0).
 
-⸻
+---
 
-Vision
+# Vision
 
 CYSSI aims to become a universal, model-independent standard for persistent collaboration between humans and AI systems.
 
@@ -267,7 +266,7 @@ The goal is not to preserve conversations.
 
 The goal is to preserve projects.
 
-⸻
+---
 
 <p align="center">
 
