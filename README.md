@@ -11,7 +11,7 @@ The project state is forever.</i>
 
 ---
 
-Why CYSSI?
+# Why CYSSI?
 
 Large Language Models are excellent at reasoning.
 
@@ -123,46 +123,38 @@ Directives always have higher priority than conversational inference.
 
 # Example Snapshot
 
+# ============================================================
+# PROJECT SNAPSHOT
+# ============================================================
+
 snapshot:
-  id: S0001
-  version: 1.0
+  id: S0003
+  version: 1.0.0
+  status: LOCKED
+
 project:
   name: Example Project
+  type: Software Project
+
+contract:
+
+  chat_is_memory: false
+  project_state_is_primary: true
+
 locked_facts:
+
+  - The project name is Example Project.
   - Python is the primary programming language.
-  - PostgreSQL is mandatory.
+  - PostgreSQL is required.
+
 decision_log:
+
   - id: D0001
-    decision: Git is used as version control.
+    decision: Git is used for version control.
 
----
-
-Project Workflow
-
-Create Project
-      │
-      ▼
-Create Initial Snapshot
-      │
-      ▼
-Work with AI
-      │
-      ▼
-Lock Facts
-      │
-      ▼
-Record Decisions
-      │
-      ▼
-Generate Snapshot
-      │
-      ▼
-Start New Conversation
-      │
-      ▼
-Load Snapshot
-
-Repeat indefinitely.
+# ============================================================
+# END OF SNAPSHOT
+# ============================================================
 
 ---
 
