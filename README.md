@@ -122,39 +122,111 @@ Directives always have higher priority than conversational inference.
 
 # Example Snapshot
 
-===========================================================
-PROJECT SNAPSHOT
-# 
-m============================================================
-
+```yaml
+#
+# CYSSI Snapshot v1
+#
+# Canonical project state.
+#
+# Optional sections remain commented until required.
+#
 snapshot:
-  id: S0003
+  id: S0001
   version: 1.0.0
   status: LOCKED
-
+# Metadata (optional)
+#metadata:
+#
+#  author:
+#  organization:
+#  created:
+#  updated:
+#  framework_version:
 project:
   name: Example Project
   type: Software Project
-
+  maturity: Concept
+#description: >
+#  Short project description.
+#repository:
+#  https://github.com/example/project
 contract:
-
   chat_is_memory: false
+  chat_is_transport: true
   project_state_is_primary: true
-
+#reproduce_before_reconstruct: true
+#deterministic_before_creative: true
+#explicit_decisions_required: true
+#consolidate_every_session: true
+# Vision (optional)
+#vision:
+#
+#  goal: >
+#    ...
+#
+#  principle: >
+#    ...
 locked_facts:
-
-  - The project name is Example Project.
+  - Example Project is the official project name.
   - Python is the primary programming language.
-  - PostgreSQL is required.
-
+# Objectives (optional)
+#objectives:
+#
+#  primary:
+#  secondary:
+# Constraints (optional)
+#constraints:
+#
+#  technical:
+#  legal:
+#  organizational:
+# Components (optional)
+#components:
+#
+#  - API
+#  - Database
+#  - Frontend
+# Dependencies (optional)
+#dependencies:
+#
+#  technologies:
+#  standards:
+#  external_projects:
+# Directive examples (optional)
+#cdl:
+#
+#  - "@lock"
+#  - "@decision"
+#  - "@snapshot"
 decision_log:
-
   - id: D0001
+    status: accepted
     decision: Git is used for version control.
-
-============================================================
-END OF SNAPSHOT
-============================================================
+# Artifacts (optional)
+#artifacts:
+#
+#  documents:
+#  diagrams:
+#  source_code:
+# Glossary (optional)
+#glossary:
+#
+#  Snapshot:
+#  Locked Facts:
+#  CDL:
+# History (optional)
+#history:
+#
+#  predecessor:
+#  successor:
+#  change_summary:
+# Integrity (advanced)
+#integrity:
+#
+#  checksum:
+#  signature:
+#  signed_by:
+```
 
 ---
 
