@@ -1,6 +1,5 @@
 <img src="assets/banner.PNG" width="100%">
 
-🌍 **Sprache / Language**
 🇩🇪 **Deutsch** • [🇬🇧 English](README.md)
 
 # CYSSI Framework
