@@ -80,27 +80,153 @@ CDL directives always execute before conversational interpretation.
 Every directive begins with the `@` character.
 
 ```text
-@directive arguments
+@directive <path> <arguments>
 ```
 
 Example
 
 ```text
-@lock The framework name is CYSSI.
+@set project.name "CYSSI"
 ```
 
 ---
 
 # Directive Categories
 
-The directive language is organized into six functional groups.
+The directive language is organized into four functional groups.
 
+- State Operations
 - Snapshot Management
-- State Management
-- Facts & Decisions
-- Repository & Documentation
 - History & Comparison
 - Transactions
+
+---
+
+# State Operations
+
+State operations manipulate the canonical project state directly.
+
+All operations use simple dot notation to address snapshot elements.
+
+## Set
+
+```text
+@set <path> <value>
+```
+
+Sets or updates a value.
+
+Example
+
+```text
+@set project.version "0.15.0"
+
+@set branding.slogan "The chat is temporary."
+```
+
+---
+
+## Unset
+
+```text
+@unset <path>
+```
+
+Removes a value.
+
+Example
+
+```text
+@unset branding.slogan
+```
+
+---
+
+## Add
+
+```text
+@add <path> <value>
+```
+
+Adds an element to a collection.
+
+Examples
+
+```text
+@add locked_facts "The framework name is CYSSI."
+
+@add components "Snapshot Validator"
+
+@add documentation.completed "docs/CDL.md"
+```
+
+---
+
+## Remove
+
+```text
+@remove <path> <value>
+```
+
+Removes an element from a collection.
+
+Examples
+
+```text
+@remove locked_facts "The framework name is FRUDEK."
+
+@remove documentation.pending "docs/CDL.md"
+```
+
+---
+
+## Replace
+
+```text
+@replace <path> <old> <new>
+```
+
+Atomically replaces one value with another.
+
+Example
+
+```text
+@replace project.name
+"Framework-FRUDEK"
+"CYSSI"
+```
+
+---
+
+## Move
+
+```text
+@move <source> <destination> <value>
+```
+
+Moves an element between collections.
+
+Example
+
+```text
+@move documentation.pending documentation.completed "docs/CDL.md"
+```
+
+---
+
+## Rename
+
+```text
+@rename <path> <new-value>
+```
+
+Renames a value.
+
+Example
+
+```text
+@rename project.name "CYSSI"
+```
 
 ---
 
@@ -143,206 +269,6 @@ Restores the immediately preceding snapshot.
 ```
 
 Restores an arbitrary earlier snapshot.
-
----
-
-# State Management
-
-## Generic Setter
-
-```text
-@set project.version 0.14.0
-```
-
-Sets or updates any mutable field.
-
----
-
-## Remove Field
-
-```text
-@unset project.experimental
-```
-
-Removes a mutable field from the project state.
-
----
-
-# Facts & Decisions
-
-## Locked Fact
-
-```text
-@lock
-```
-
-Creates a Locked Fact.
-
-Example
-
-```text
-@lock The framework name is CYSSI.
-```
-
----
-
-## Remove Locked Fact
-
-```text
-@unlock
-```
-
-Removes a Locked Fact.
-
-Example
-
-```text
-@unlock The framework name is FRUDEK.
-```
-
----
-
-## Replace Locked Fact
-
-```text
-@replace-lock
-Old: The framework name is FRUDEK.
-New: The framework name is CYSSI.
-```
-
-Atomically replaces one Locked Fact with another.
-
----
-
-## Project Fact
-
-```text
-@fact
-```
-
-Creates a mutable project fact.
-
----
-
-## Remove Project Fact
-
-```text
-@revert-fact
-```
-
-Removes an existing project fact.
-
----
-
-## Replace Project Fact
-
-```text
-@replace-fact
-```
-
-Updates a project fact.
-
----
-
-## Decision
-
-```text
-@decision
-```
-
-Creates a Decision Log entry.
-
----
-
-## Revert Decision
-
-```text
-@revert-decision D0014
-```
-
-Marks a decision as reverted.
-
-The original entry remains part of project history.
-
----
-
-## Supersede Decision
-
-```text
-@supersede D0014
-```
-
-Replaces an existing decision with a newer one.
-
-The historical relationship is preserved.
-
----
-
-# Repository & Documentation
-
-## Repository
-
-```text
-@repository add docs/API.md
-```
-
-Adds an artifact.
-
-```text
-@repository remove docs/API.md
-```
-
-Removes an artifact.
-
-```text
-@repository rename
-```
-
-Renames an artifact.
-
----
-
-## Components
-
-```text
-@component add
-```
-
-Adds a framework component.
-
-```text
-@component remove
-```
-
-Removes a component.
-
-```text
-@component rename
-```
-
-Renames a component.
-
----
-
-## Documentation
-
-```text
-@doc complete docs/CDL.md
-```
-
-Marks documentation as completed.
-
-```text
-@doc pending docs/Snapshots.md
-```
-
-Moves documentation back into the pending list.
-
-```text
-@doc remove docs/Old.md
-```
-
-Removes obsolete documentation.
 
 ---
 
@@ -469,11 +395,7 @@ CDL exists exclusively for deterministic state management.
 
 # Extensibility
 
-Future versions of CYSSI may introduce additional directives.
-
-Existing directives should preserve backwards compatibility whenever possible.
-
-Unknown directives must be ignored by older implementations.
+Future versions of CDL may introduce additional operations while preserving backwards compatibility with the existing instruction set.
 
 ---
 
@@ -483,4 +405,4 @@ The CYSSI Directive Language is the deterministic control interface of the CYSSI
 
 It separates explicit project management from natural conversation and enables reproducible, reversible and model-independent manipulation of the canonical project state.
 
-By introducing state management, rollback capabilities, history navigation and transactional processing, CDL evolves from a simple command language into a complete **Project State Management Language (PSML)** for long-term Human-AI collaboration.
+By defining a minimal, orthogonal instruction set based on generic state operations, CDL remains simple, consistent and implementation-independent while supporting long-term Human-AI collaboration through deterministic project state management.
