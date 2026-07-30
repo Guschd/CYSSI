@@ -5,7 +5,7 @@
 # CYSSI Framework
 
 > **Der Chat ist vergänglich.  
-> Der Projektzustand bleibt.**
+> Dein Projekt nicht.**
 
 ---
 
@@ -13,7 +13,7 @@
 
 Du beginnst eine neue Unterhaltung.
 
-Die KI ist beeindruckend leistungsfähig.
+Die KI ist beeindruckend gut und wortgewandt.
 
 Sie hilft dir beim Entwickeln von Software, beim Schreiben von Dokumentationen und beim Lösen komplexer Probleme.
 
@@ -152,7 +152,7 @@ Diese README soll zunächst das Konzept vermitteln und den Einstieg erleichtern.
 
 # Grundprinzipien
 
-- Kanonisch vor konversationell.
+- Definition vor Konversation.
 - Explizit vor implizit.
 - Deterministisch statt heuristisch.
 - Für Menschen und Maschinen lesbar.
@@ -179,4 +179,4 @@ CYSSI ist keine Programmiersprache.
 
 CYSSI ist ein Framework, das den Projektzustand über Unterhaltungen, Sitzungen und verschiedene KI-Modelle hinweg bewahrt.
 
-Denn wenn Chats vergänglich sind, sollten Projekte es nicht sein.
+Auch wenn Chats vergänglich sind, sollten Projekte bleiben.
