@@ -1,0 +1,241 @@
+#
+# CYSSI Snapshot
+#
+# Canonical project state.
+#
+# Snapshot ID: S0009
+#
+
+snapshot:
+
+  id: S0009
+  version: 0.9.0
+  status: LOCKED
+
+project:
+
+  name: CYSSI Framework
+  type: Canonical Project State Management Framework
+  maturity: Public Pre-Release
+
+vision:
+
+  goal: >
+    Develop a model-independent open-source framework
+    for managing long-term human-AI collaboration.
+
+  principle: >
+    The chat is temporary.
+    The project state is forever.
+
+contract:
+
+  chat_is_memory: false
+  chat_is_transport: true
+  project_state_is_primary: true
+  reproduce_before_reconstruct: true
+  deterministic_before_creative: true
+  explicit_decisions_required: true
+  consolidate_every_session: true
+
+locked_facts:
+
+  - The framework name is CYSSI.
+  - The canonical project state is the only authoritative source of truth.
+  - Conversations transport information only.
+  - Every conversation ends with a snapshot.
+  - CDL directives are processed before conversational inference.
+  - The official logo is part of the CYSSI identity.
+  - The README is the public entry point of the repository.
+  - The official snapshot template follows the Unix configuration style.
+  - Normative specifications are separated from documentation.
+  - The repository structure defined in S0008 is canonical.
+
+components:
+
+  - Context Bubble
+  - Project Contract
+  - Locked Facts
+  - Conversation Compiler
+  - CYSSI Directive Language
+  - Semantic Compression
+  - Context Snapshot
+  - Conversation Lifecycle
+
+branding:
+
+  slogan: >
+    The chat is temporary.
+    The project state is forever.
+
+repository:
+
+  root:
+
+    - README.md
+    - LICENSE
+    - CONTRIBUTING.md
+
+  docs:
+
+    - Introduction.md
+    - Architecture.md
+    - Project_Contract.md
+    - CDL.md
+    - Snapshots.md
+    - Best_Practices.md
+    - FAQ.md
+    - Glossary.md
+
+  specs:
+
+    - CSP-0001-Snapshot-Specification.md
+    - CSP-0002-Project-Contract.md
+    - CSP-0003-Locked-Facts.md
+    - CSP-0004-CDL.md
+    - CSP-0005-Conversation-Compiler.md
+    - CSP-0006-Semantic-Compression.md
+    - CSP-0007-Context-Diff.md
+    - CSP-0008-Snapshot-Merge.md
+    - CSP-0009-Validation.md
+
+  examples:
+
+    - example_snapshot.yaml
+    - minimal_snapshot.yaml
+    - complete_snapshot.yaml
+    - hello_cyssi/
+
+  schema:
+
+    - snapshot.schema.json
+    - snapshot.schema.yaml
+
+documentation:
+
+  completed:
+
+    - README.md
+    - docs/Introduction.md
+
+decision_log:
+
+  - id: D0001
+    status: accepted
+    decision: Chat is not memory.
+
+  - id: D0002
+    status: accepted
+    decision: The project state is the primary knowledge source.
+
+  - id: D0003
+    status: accepted
+    decision: Every conversation ends with a snapshot.
+
+  - id: D0004
+    status: accepted
+    decision: The framework name is CYSSI.
+
+  - id: D0005
+    status: accepted
+    decision: CYSSI introduces the Directive Language (CDL).
+
+  - id: D0006
+    status: accepted
+    decision: Every public repository starts with a README.
+
+  - id: D0007
+    status: accepted
+    decision: The generated logo becomes the official project identity.
+
+  - id: D0008
+    status: accepted
+    decision: The README serves as the public landing page.
+
+  - id: D0009
+    status: accepted
+    decision: The official snapshot template adopts a Unix-style configuration layout.
+
+  - id: D0010
+    status: accepted
+    decision: Repository documentation and normative specifications are separated into docs/ and specs/.
+
+  - id: D0011
+    status: accepted
+    decision: Documentation is written before implementation. Each completed document becomes part of the canonical project state.
+
+change_log:
+
+  - snapshot: S0009
+
+    changes:
+
+      - Added completed documentation tracking.
+      - Added Introduction.md as the first completed documentation.
+      - Established documentation-first workflow.
+      - Snapshot synchronized with current repository state.
+
+# Metadata (optional)
+
+#metadata:
+#
+#  author:
+#  organization:
+#  created:
+#  updated:
+#  framework_version:
+
+# Objectives (optional)
+
+#objectives:
+#
+#  primary:
+#  secondary:
+
+# Constraints (optional)
+
+#constraints:
+#
+#  technical:
+#  legal:
+#  organizational:
+
+# Dependencies (optional)
+
+#dependencies:
+#
+#  technologies:
+#  standards:
+#  external_projects:
+
+# Artifacts (optional)
+
+#artifacts:
+#
+#  documents:
+#  diagrams:
+#  source_code:
+
+# Glossary (optional)
+
+#glossary:
+#
+#  Snapshot:
+#  Locked Facts:
+#  CDL:
+
+# History (optional)
+
+#history:
+#
+#  predecessor: S0008
+#  successor:
+#  change_summary:
+
+# Integrity (advanced)
+
+#integrity:
+#
+#  checksum:
+#  signature:
+#  signed_by:
