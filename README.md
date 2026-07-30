@@ -1,5 +1,8 @@
 <img src="assets/banner.PNG" width="100%">
 
+🌍 **Language / Sprache**
+🇬🇧 **English** (default) • [🇩🇪 Deutsch](README.de.md)
+
 # CYSSI Framework
 
 > **The chat is temporary.  
