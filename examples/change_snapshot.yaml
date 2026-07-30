@@ -1,0 +1,19 @@
+#
+# CYSSI Change Snapshot Example
+#
+# Smallest valid Change Snapshot according to CSP-0001.
+#
+
+snapshot:
+
+  id: S0002
+  type: change
+  base_snapshot: S0001
+  version: 1.0.0
+  status: DRAFT
+
+changes:
+
+  - path: project.name
+    operation: replace
+    value: Example Project v2
