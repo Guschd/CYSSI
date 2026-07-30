@@ -1,0 +1,233 @@
+#
+# CYSSI Complete Snapshot Example
+#
+# Complete reference implementation according to CSP-0001.
+#
+
+snapshot:
+
+  id: S0005
+  type: full
+  version: 1.0.0
+  status: LOCKED
+
+project:
+
+  name: Example Inventory System
+  type: Software Project
+  maturity: Prototype
+
+vision:
+
+  goal: >
+    Build a lightweight inventory management system
+    for small businesses.
+
+  principle: >
+    Keep the system simple, reliable and maintainable.
+
+contract:
+
+  chat_is_memory: false
+  chat_is_transport: true
+  project_state_is_primary: true
+  reproduce_before_reconstruct: true
+  deterministic_before_creative: true
+  explicit_decisions_required: true
+  consolidate_every_session: true
+
+locked_facts:
+
+  - Python is the primary programming language.
+  - PostgreSQL is the production database.
+  - Docker is required for deployment.
+  - GitHub hosts the canonical repository.
+
+components:
+
+  - Backend API
+  - Database
+  - Authentication
+  - Web Frontend
+  - Documentation
+  - CI/CD Pipeline
+
+branding:
+
+  slogan: >
+    Simple inventory management for everyone.
+
+repository:
+
+  root:
+
+    - README.md
+    - LICENSE
+    - CONTRIBUTING.md
+
+  docs:
+
+    - Introduction.md
+    - Architecture.md
+    - API.md
+    - Deployment.md
+
+  specs:
+
+    - CSP-0001-Snapshot-Specification.md
+    - CSP-0002-Project-Contract.md
+
+  schema:
+
+    - snapshot.schema.yaml
+    - snapshot.schema.json
+
+  templates:
+
+    - default_snapshot.yaml
+
+  examples:
+
+    - minimal_snapshot.yaml
+    - change_snapshot.yaml
+    - full_snapshot.yaml
+    - complete_snapshot.yaml
+    - example_snapshot.yaml
+
+documentation:
+
+  completed:
+
+    - README.md
+    - Introduction.md
+
+  pending:
+
+    - Architecture.md
+    - API.md
+    - Deployment.md
+
+output_rules:
+
+  markdown:
+
+    wrap_if_codeblocks: true
+    wrap_without_codeblocks: false
+
+decision_log:
+
+  - id: D0001
+    status: accepted
+    decision: Python is selected as the implementation language.
+
+  - id: D0002
+    status: accepted
+    decision: PostgreSQL is selected as the production database.
+
+  - id: D0003
+    status: accepted
+    decision: Docker is required for deployment.
+
+change_log:
+
+  - snapshot: S0005
+
+    changes:
+
+      - Initial project created.
+      - Repository initialized.
+      - Documentation structure defined.
+
+metadata:
+
+  author: John Doe
+  organization: Example Company
+  created: 2026-07-30
+  updated: 2026-07-30
+  framework_version: 1.0.0
+
+objectives:
+
+  primary:
+
+    - Build a maintainable inventory management system.
+
+  secondary:
+
+    - Provide a REST API.
+    - Support Docker deployment.
+    - Enable automated testing.
+
+constraints:
+
+  technical:
+
+    - Python 3.13
+    - PostgreSQL 17
+    - Docker
+
+  legal:
+
+    - MIT License
+
+  organizational:
+
+    - GitHub Flow
+    - Pull Request reviews required
+
+dependencies:
+
+  technologies:
+
+    - Python
+    - FastAPI
+    - PostgreSQL
+    - Docker
+
+  standards:
+
+    - REST
+    - OpenAPI 3.1
+    - YAML 1.2
+
+  external_projects:
+
+    - FastAPI
+    - Pydantic
+
+artifacts:
+
+  documents:
+
+    - README.md
+    - Architecture.md
+    - API.md
+
+  diagrams:
+
+    - architecture.drawio
+    - deployment.drawio
+
+  source_code:
+
+    - src/
+    - tests/
+
+glossary:
+
+  Snapshot: Canonical representation of a project state.
+  Locked Facts: Immutable project facts.
+  CDL: CYSSI Directive Language.
+  PSML: Project State Markup Language.
+
+history:
+
+  predecessor:
+  successor:
+  change_summary: Initial complete reference snapshot.
+
+integrity:
+
+  checksum:
+  signature:
+  signed_by:
