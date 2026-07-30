@@ -142,6 +142,7 @@ snapshot:
 #  created:
 #  updated:
 #  framework_version:
+#  snapshot_version:
 project:
   name: Example Project
   type: Software Project
@@ -202,6 +203,22 @@ decision_log:
   - id: D0001
     status: accepted
     decision: Git is used for version control.
+# Change Log (optional)
+#change_log:
+#
+#  - snapshot: S0001
+#    changes:
+#      - Initial project created.
+#
+#  - snapshot: S0002
+#    changes:
+#      - Project contract added.
+#      - Locked facts extended.
+#
+#  - snapshot: S0003
+#    changes:
+#      - CDL introduced.
+#      - Decision log expanded.
 # Artifacts (optional)
 #artifacts:
 #
