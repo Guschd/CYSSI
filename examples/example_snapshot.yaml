@@ -1,32 +1,30 @@
 #
-# CYSSI Default Snapshot
+# CYSSI Example Snapshot
 #
-# Canonical bootstrap project state.
-#
-# This template is copied when initializing a new CYSSI project.
+# Demonstrates the canonical structure of a Full Snapshot.
 #
 
 snapshot:
 
-  id: S0000
-  version: 0.17.0
-  status: TEMPLATE
+  id: S0003
+  type: full
+  version: 0.18.0
+  status: LOCKED
 
 project:
 
-  name: New CYSSI Project
-  type: Canonical Project State Management Framework
-  maturity: Initial
+  name: Example Inventory System
+  type: Software Project
+  maturity: Prototype
 
 vision:
 
   goal: >
-    Develop a model-independent open-source framework
-    for managing long-term human-AI collaboration.
+    Build a lightweight inventory management application
+    for small businesses.
 
   principle: >
-    The chat is temporary.
-    The project state is forever.
+    Keep the system simple, reliable and maintainable.
 
 contract:
 
@@ -40,39 +38,23 @@ contract:
 
 locked_facts:
 
-  - The framework name is CYSSI.
-  - The canonical project state is the only authoritative source of truth.
-  - Conversations transport information only.
-  - Every conversation ends with a snapshot.
-  - CDL directives are processed before conversational inference.
-  - The official logo is part of the CYSSI identity.
-  - The README is the public entry point of the repository.
-  - The official snapshot template follows the Unix configuration style.
-  - Normative specifications are separated from documentation.
-  - The repository structure is canonical.
-  - Documentation is written before implementation.
-  - Markdown output follows the CYSSI Markdown Output Rule.
-  - CDL is the deterministic interface for manipulating the canonical project state.
-  - State-changing CDL directives should be reversible whenever possible.
-  - CDL supports transactional processing.
-  - CDL v1 defines a minimal, orthogonal instruction set based on generic state operations.
+  - The primary programming language is Python.
+  - PostgreSQL is the production database.
+  - REST is the public API.
+  - Docker is required for deployment.
 
 components:
 
-  - Conversation
-  - Conversation Compiler
-  - Project Contract
-  - Locked Facts
-  - Decision Log
-  - CYSSI Directive Language
-  - Snapshot Generator
-  - Canonical Project State
+  - Backend API
+  - Database
+  - Authentication
+  - Web Frontend
+  - Documentation
 
 branding:
 
   slogan: >
-    The chat is temporary.
-    Your project shall not.
+    Simple inventory management.
 
 repository:
 
@@ -80,72 +62,26 @@ repository:
 
     - README.md
     - LICENSE
-    - CONTRIBUTING.md
 
   docs:
 
-    - Introduction.md
     - Architecture.md
-    - Project_Contract.md
-    - CDL.md
-    - Snapshots.md
-    - Best_Practices.md
-    - FAQ.md
-    - Glossary.md
+    - API.md
 
   specs:
 
-    - CSP-0001-Snapshot-Specification.md
-    - CSP-0002-Project-Contract.md
-    - CSP-0003-Locked-Facts.md
-    - CSP-0004-CDL.md
-    - CSP-0005-Conversation-Compiler.md
-    - CSP-0006-Semantic-Compression.md
-    - CSP-0007-Context-Diff.md
-    - CSP-0008-Snapshot-Merge.md
-    - CSP-0009-Validation.md
-
-  schema:
-
-    - snapshot.schema.json
-    - snapshot.schema.yaml
-
-  templates:
-
-    - default_snapshot.yaml
-
-  examples:
-
-    - minimal_snapshot.yaml
-    - complete_snapshot.yaml
-    - hello_cyssi/
+    - CSP-Example.md
 
 documentation:
 
   completed:
 
     - README.md
-    - docs/Introduction.md
-    - docs/Architecture.md
-    - docs/Project_Contract.md
-    - docs/CDL.md
 
   pending:
 
-    - docs/Snapshots.md
-    - docs/Best_Practices.md
-    - docs/FAQ.md
-    - docs/Glossary.md
-
-    - specs/CSP-0001-Snapshot-Specification.md
-    - specs/CSP-0002-Project-Contract.md
-    - specs/CSP-0003-Locked-Facts.md
-    - specs/CSP-0004-CDL.md
-    - specs/CSP-0005-Conversation-Compiler.md
-    - specs/CSP-0006-Semantic-Compression.md
-    - specs/CSP-0007-Context-Diff.md
-    - specs/CSP-0008-Snapshot-Merge.md
-    - specs/CSP-0009-Validation.md
+    - Architecture.md
+    - API.md
 
 output_rules:
 
@@ -154,60 +90,25 @@ output_rules:
     wrap_if_codeblocks: true
     wrap_without_codeblocks: false
 
-decision_log: []
+decision_log:
 
-change_log: []
+  - id: D0001
+    status: accepted
+    decision: Python is selected as the implementation language.
 
-# ---------------------------------------------------------------------------
-# Optional Sections
-# ---------------------------------------------------------------------------
+  - id: D0002
+    status: accepted
+    decision: PostgreSQL is used as the primary database.
 
-#metadata:
-#
-#  author:
-#  organization:
-#  created:
-#  updated:
-#  framework_version:
+change_log:
 
-#objectives:
-#
-#  primary:
-#  secondary:
+  - snapshot: S0003
 
-#constraints:
-#
-#  technical:
-#  legal:
-#  organizational:
+    changes:
 
-#dependencies:
-#
-#  technologies:
-#  standards:
-#  external_projects:
+      - Initial project snapshot created.
 
-#artifacts:
-#
-#  documents:
-#  diagrams:
-#  source_code:
+history:
 
-#glossary:
-#
-#  Snapshot:
-#  Locked Facts:
-#  CDL:
-#  PSML: Project State Management Language
-
-#history:
-#
-#  predecessor:
-#  successor:
-#  change_summary:
-
-#integrity:
-#
-#  checksum:
-#  signature:
-#  signed_by:
+  predecessor:
+  successor:
