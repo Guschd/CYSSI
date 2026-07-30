@@ -1,0 +1,12 @@
+#
+# CYSSI Minimal Snapshot Example
+#
+# Smallest valid Full Snapshot according to CSP-0001.
+#
+
+snapshot:
+
+  id: S0001
+  type: full
+  version: 1.0.0
+  status: LOCKED
