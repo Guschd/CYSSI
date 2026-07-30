@@ -1,360 +1,181 @@
-<img src="assets/banner.PNG" alt="CYSSI Framework" width="100%">
-<h1 align="center">CYSSI Framework</h1>
-<p align="center">
-<b>Canonical Project State Management Framework</b>
-</p>
-<p align="center">
-<i>The chat is temporary.<br>
-The project state is forever.</i>
-</p>
+<img src="assets/banner.PNG" width="100%">
+
+# CYSSI Framework
+
+> **The chat is temporary.  
+> The project state is forever.**
 
 ---
 
-# Why CYSSI?
+## Every AI project eventually hits the same wall.
 
-Large Language Models are excellent at reasoning.
+You start a new conversation.
 
-They are not designed to preserve a long-term project state across independent conversations.
+The AI is brilliant.
 
-As projects grow over days, weeks or months, information gradually drifts.
+It helps you design software, write documentation and solve difficult problems.
 
-Typical consequences are:
+A week later you open a new chat.
 
-* Forgotten decisions
-* Different assumptions
-* Inconsistent documentation
-* Conflicting diagrams
-* Missing project constraints
-* Repeated explanations
-* Loss of canonical knowledge
+The project is gone.
 
-Most AI workflows attempt to reconstruct a project from previous conversations.
+Important decisions have vanished.
+Documentation slowly drifts apart.
+The AI makes different assumptions than before.
 
-CYSSI takes a different approach.
+Nothing is technically broken.
 
-Instead of making the conversation the source of truth, CYSSI introduces a canonical project state that survives every chat, every session and every supported AI model.
+The conversation was never meant to be your project's memory.
 
-⸻
-
-The Core Principle
-
-The conversation transports knowledge.
-
-The snapshot preserves knowledge.
-
-The project—not the conversation—is the single authoritative source of truth.
----
-
-Architecture
-
-                 Human
-                    │
-                    ▼
-             Conversation
-                    │
-                    ▼
-          Conversation Compiler
-                    │
-      ┌─────────────┴─────────────┐
-      │                           │
-Directive Processing        Information Extraction
-
-      └─────────────┬─────────────┘
-                    ▼
-               Validation
-                    │
-                    ▼
-            Canonicalization
-                    │
-                    ▼
-        Canonical Project State
-                    │
-                    ▼
-             Snapshot (S000x)
-                    │
-                    ▼
-          Next Conversation
+**CYSSI exists because of that simple observation.**
 
 ---
 
-# Philosophy
+# What is CYSSI?
 
-CYSSI is built around a simple observation:
+CYSSI is an open framework for preserving the **canonical state** of long-running Human–AI projects.
 
-AI models reconstruct conversations.
+Instead of treating conversations as memory, CYSSI treats them as transport.
 
-CYSSI reproduces projects.
+Every conversation begins by restoring the project.
 
-This distinction is the foundation of the framework.
+Every conversation ends by updating it.
 
----
-
-# Core Components
-
-| Component | Purpose |
-|-|-|
-|Context Bubble | Defines the active working context |
-|Project Contract | Defines immutable project rules |
-|Locked Facts | Canonical project constants |
-|Conversation Compiler|Extracts structured knowledge|
-|CYSSI Directive Language (CDL)|Explicit project control|
-|Semantic Compression|Compresses without losing meaning|
-|Context Snapshot|Canonical project representation|
-|Conversation Lifecycle|Defines the project workflow|
+The project—not the chat—becomes the single source of truth.
 
 ---
 
-# CYSSI Directive Language (CDL)
+# How it works
 
-The Directive Language allows users to explicitly modify the project state.
+```text
+Conversation
+      │
+      ▼
+Conversation Compiler
+      │
+      ▼
+Canonical Project State
+      │
+      ▼
+Snapshot
+      │
+      ▼
+Next Conversation
+```
 
-Examples:
-
-@lock project.name = CYSSI
-@decision Chat is not memory.
-@rename FrameworkX -> CYSSI
-@forget Chapter 4
-@snapshot
-
-Directives always have higher priority than conversational inference.
+Every session starts from a snapshot and produces a new one.
 
 ---
 
-# Example Snapshot
+# Without CYSSI
 
-```yaml
-#
-# CYSSI Snapshot v1
-#
-# Canonical project state.
-#
-# Optional sections remain commented until required.
-#
-snapshot:
-  id: S0001
-  version: 1.0.0
-  status: LOCKED
-# Metadata (optional)
-#metadata:
-#
-#  author:
-#  organization:
-#  created:
-#  updated:
-#  framework_version:
-#  snapshot_version:
-project:
-  name: Example Project
-  type: Software Project
-  maturity: Concept
-#description: >
-#  Short project description.
-#repository:
-#  https://github.com/example/project
-contract:
-  chat_is_memory: false
-  chat_is_transport: true
-  project_state_is_primary: true
-#reproduce_before_reconstruct: true
-#deterministic_before_creative: true
-#explicit_decisions_required: true
-#consolidate_every_session: true
-# Vision (optional)
-#vision:
-#
-#  goal: >
-#    ...
-#
-#  principle: >
-#    ...
-locked_facts:
-  - Example Project is the official project name.
-  - Python is the primary programming language.
-# Objectives (optional)
-#objectives:
-#
-#  primary:
-#  secondary:
-# Constraints (optional)
-#constraints:
-#
-#  technical:
-#  legal:
-#  organizational:
-# Components (optional)
-#components:
-#
-#  - API
-#  - Database
-#  - Frontend
-# Dependencies (optional)
-#dependencies:
-#
-#  technologies:
-#  standards:
-#  external_projects:
-# Directive examples (optional)
-#cdl:
-#
-#  - "@lock"
-#  - "@decision"
-#  - "@snapshot"
-decision_log:
-  - id: D0001
-    status: accepted
-    decision: Git is used for version control.
-# Change Log (optional)
-#change_log:
-#
-#  - snapshot: S0001
-#    changes:
-#      - Initial project created.
-#
-#  - snapshot: S0002
-#    changes:
-#      - Project contract added.
-#      - Locked facts extended.
-#
-#  - snapshot: S0003
-#    changes:
-#      - CDL introduced.
-#      - Decision log expanded.
-# Artifacts (optional)
-#artifacts:
-#
-#  documents:
-#  diagrams:
-#  source_code:
-# Glossary (optional)
-#glossary:
-#
-#  Snapshot:
-#  Locked Facts:
-#  CDL:
-# History (optional)
-#history:
-#
-#  predecessor:
-#  successor:
-#  change_summary:
-# Integrity (advanced)
-#integrity:
-#
-#  checksum:
-#  signature:
-#  signed_by:
+```text
+Conversation A
+    │
+Decision: Use Python
+    │
+Conversation B
+    │
+Decision forgotten
+    │
+Project begins to drift
+```
+
+# With CYSSI
+
+```text
+Conversation A
+    │
+Snapshot
+    │
+Conversation B
+    │
+Snapshot restored
+    │
+Decision preserved
 ```
 
 ---
 
-# Repository Structure
+# The Building Blocks
 
-### CYSSI/
-- README.md
-- LICENSE
-- CONTRIBUTING.md
+### Project Contract
 
-### docs/
-- Introduction.md
-- Architecture.md
-- Project_Contract.md
-- CDL.md
-- Snapshots.md
-- Best_Practices.md
-- FAQ.md
+Defines the rules every implementation follows.
 
-### examples/
-- example_snapshot.yaml
-- hello_cyssi/
-### schema/
-- snapshot.schema.json
-- snapshot.schema.yaml
+### Locked Facts
 
----
+Information that must never change accidentally.
 
-# Roadmap
+### Conversation Compiler
 
-Completed
+Transforms natural language into structured project knowledge.
 
-* ✅ Core Concept
-* ✅ Project Contract
-* ✅ Snapshot Architecture
-* ✅ Locked Facts
-* ✅ Conversation Lifecycle
-* ✅ CYSSI Directive Language
-* ✅ Brand Identity
-* ✅ GitHub Documentation
+### Canonical Project State
 
-Planned
+The authoritative representation of the entire project.
 
-* ⬜ Snapshot Schema
-* ⬜ Context Diff
-* ⬜ Snapshot Merge
-* ⬜ Semantic Compression Specification
-* ⬜ Reference Parser
-* ⬜ CLI
-* ⬜ VSCode Extension
-* ⬜ SDK
+### Snapshot
+
+A portable representation of the current project state.
+
+### CYSSI Directive Language (CDL)
+
+Allows deterministic modifications to the canonical project state.
+
+Example:
+
+```text
+@set project.name "CYSSI"
+@add locked_facts "Framework name is CYSSI."
+@snapshot
+```
 
 ---
 
-# Design Philosophy
+# Repository
 
-CYSSI follows six fundamental principles:
+```text
+docs/
+specs/
+schema/
+examples/
+assets/
+```
 
-* Canonical before conversational
-* Deterministic before creative
-* Reproduce before reconstruct
-* Explicit before implicit
-* Human-readable and machine-readable
-* Model independent
+Detailed specifications live inside `docs/` and `specs/`.
 
----
-
-Project Status
-
-Current Status
-
-Public Pre-Release
-
-Current Version
-
-0.6.0
+The README is intentionally focused on understanding the framework before exploring its internals.
 
 ---
 
-# Contributing
+# Design Principles
 
-Contributions are welcome.
-
-Ideas, implementations, documentation improvements and discussions are encouraged.
-
-Please read the documentation before submitting changes.
+- Canonical before conversational.
+- Explicit before implicit.
+- Deterministic before heuristic.
+- Human-readable and machine-readable.
+- Model independent.
+- Long-term project continuity.
 
 ---
 
-# License
+# Current Status
 
-This project is licensed under the GNU General Public License v3.0 (GPL-3.0).
+Version: **0.17.0**
+
+Status: **Public Pre-Release**
 
 ---
 
 # Vision
 
-CYSSI aims to become a universal, model-independent standard for persistent collaboration between humans and AI systems.
+CYSSI is not another AI.
 
-The goal is not to preserve conversations.
+It is not another chatbot.
 
-The goal is to preserve projects.
+It is not another programming language.
 
----
+It is a framework for preserving project state across conversations, sessions and language models.
 
-<p align="center">
-
-⭐ Remember
-
-Conversations disappear.
-
-Projects shouldn’t.
-
-</p>
+If conversations are temporary, projects shouldn't be.
