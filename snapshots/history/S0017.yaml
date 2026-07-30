@@ -1,0 +1,45 @@
+# CYSSI Snapshot S0017
+
+## Snapshot Information
+
+| Field | Value |
+|-------|-------|
+| Snapshot ID | S0017 |
+| Version | 0.17.0 |
+| Status | Draft |
+| Date | 2026-07-30 |
+
+---
+
+# Summary
+
+This snapshot records the redesign of the project README.
+
+The README is no longer treated as a condensed specification. Instead, it becomes the primary entry point into the CYSSI Framework by explaining the problem first, followed by the solution, architecture and specifications.
+
+---
+
+# Locked Facts
+
+- The README introduces the framework before describing its specifications.
+- The README follows a documentation-first approach instead of a specification-first approach.
+- Technical precision remains unchanged while readability is improved.
+
+---
+
+# Decision Log
+
+## D0020
+
+The repository README SHALL prioritize accessibility, narrative flow and technical clarity over specification-style language.
+
+RFC-style terminology remains reserved for the detailed documentation inside the `docs/` and `specs/` directories.
+
+---
+
+# Changelog
+
+- Redesigned README structure.
+- Problem-first narrative adopted.
+- Simplified explanations for first-time readers.
+- Repository documentation remains technically accurate while becoming significantly more approachable.
