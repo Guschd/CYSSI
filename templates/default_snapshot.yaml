@@ -3,14 +3,23 @@
 #
 # Canonical snapshot template.
 #
+# Copy this file to create a new snapshot.
+# Replace the snapshot header with the appropriate type.
+#
+# Supported snapshot types:
+#   template - Reusable snapshot template
+#   change   - Snapshot containing only changes
+#   full     - Complete canonical project state
+#
 # Uncomment and populate the required sections.
 #
 
 #snapshot:
 #
 #  id:
+#  type: template
 #  version:
-#  status:
+#  status: TEMPLATE
 
 #project:
 #
