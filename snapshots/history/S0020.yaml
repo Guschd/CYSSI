@@ -1,0 +1,64 @@
+#
+# CYSSI Change Snapshot
+#
+# Snapshot ID: S0020
+#
+
+snapshot:
+
+  id: S0020
+  version: 0.20.0
+  type: change
+  status: LOCKED
+
+history:
+
+  predecessor: S0019
+
+summary:
+
+  Introduced the Persistence and Traceability Principles as
+  normative concepts of the CYSSI Framework.
+
+decision_log:
+
+  - id: D0022
+    status: accepted
+    decision: >
+      LLM conversations SHALL be treated as volatile working environments
+      and SHALL NOT be considered durable project storage.
+
+  - id: D0023
+    status: accepted
+    decision: >
+      Every accepted snapshot SHALL be stored in durable external
+      project storage independent of any LLM conversation.
+
+  - id: D0024
+    status: accepted
+    decision: >
+      Project History SHALL preserve every accepted snapshot for
+      traceability and audit purposes, independent of the canonical
+      project state.
+
+locked_facts:
+
+  - LLM conversations are volatile working environments.
+  - Chat history is not durable project storage.
+  - Every accepted snapshot SHALL be archived externally.
+  - Canonical project state and Project History are distinct concepts.
+  - Full Snapshots provide logical reconstruction.
+  - Project History provides historical traceability.
+
+changes:
+
+  specs:
+
+    - CSP-0001
+
+  additions:
+
+    - Introduced the Persistence Principle.
+    - Introduced the Traceability Principle.
+    - Defined external snapshot persistence as a normative requirement.
+    - Separated canonical project state from project history.
