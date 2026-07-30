@@ -1,0 +1,93 @@
+#
+# CYSSI Full Snapshot Example
+#
+# Typical Full Snapshot according to CSP-0001.
+#
+
+snapshot:
+
+  id: S0003
+  type: full
+  version: 1.0.0
+  status: DRAFT
+
+project:
+
+  name: Example Inventory System
+  type: Software Project
+  maturity: Prototype
+
+vision:
+
+  goal: >
+    Build a lightweight inventory management system
+    for small businesses.
+
+  principle: >
+    Keep the system simple, reliable and maintainable.
+
+contract:
+
+  chat_is_memory: false
+  chat_is_transport: true
+  project_state_is_primary: true
+  reproduce_before_reconstruct: true
+  deterministic_before_creative: true
+  explicit_decisions_required: true
+  consolidate_every_session: true
+
+locked_facts:
+
+  - Python is the primary programming language.
+  - PostgreSQL is the production database.
+  - Docker is required for deployment.
+
+components:
+
+  - Backend API
+  - Database
+  - Authentication
+  - Web Frontend
+
+repository:
+
+  root:
+
+    - README.md
+    - LICENSE
+
+  docs:
+
+    - Architecture.md
+    - API.md
+
+documentation:
+
+  completed:
+
+    - README.md
+
+  pending:
+
+    - Architecture.md
+    - API.md
+
+decision_log:
+
+  - id: D0001
+    status: accepted
+    decision: Python is selected as the implementation language.
+
+change_log:
+
+  - snapshot: S0003
+
+    changes:
+
+      - Initial Full Snapshot created.
+
+history:
+
+  predecessor:
+  successor:
+  change_summary: Initial Full Snapshot.
