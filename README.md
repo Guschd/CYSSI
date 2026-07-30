@@ -5,7 +5,7 @@
 # CYSSI Framework
 
 > **The chat is temporary.  
-> The project state is forever.**
+> Your project shall not.**
 
 ---
 
@@ -180,4 +180,4 @@ It is not another programming language.
 
 It is a framework for preserving project state across conversations, sessions and language models.
 
-If conversations are temporary, projects shouldn't be.
+If conversations are temporary, your projects shouldn't.
