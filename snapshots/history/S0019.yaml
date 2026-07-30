@@ -1,0 +1,49 @@
+#
+# CYSSI Change Snapshot
+#
+# Snapshot ID: S0019
+#
+
+snapshot:
+
+  id: S0019
+  version: 0.19.0
+  type: change
+  status: LOCKED
+
+history:
+
+  predecessor: S0018
+
+summary:
+
+  Introduced the Closed-Loop Principle as a normative concept of
+  CYSSI Snapshot Semantics.
+
+decision_log:
+
+  - id: D0021
+    status: accepted
+    decision: >
+      Every Full Snapshot SHALL represent the validated result of one
+      completed reasoning cycle and SHALL become the sole canonical
+      project state for the next iteration.
+
+locked_facts:
+
+  - A snapshot is not a backup.
+  - A snapshot is the validated result of one completed reasoning cycle.
+  - Every Full Snapshot concludes one Closed-Loop cycle.
+  - Historical snapshots exist for traceability rather than reconstruction.
+
+changes:
+
+  specs:
+
+    - CSP-0001
+
+  additions:
+
+    - Introduced the Closed-Loop Principle.
+    - Added the normative snapshot philosophy.
+    - Defined snapshots as canonical reasoning states instead of backups.
