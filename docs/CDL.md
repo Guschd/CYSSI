@@ -1,10 +1,8 @@
 # CYSSI Directive Language (CDL)
 
-The CYSSI Directive Language (CDL) is a lightweight command language that allows users to issue explicit, deterministic instructions to a CYSSI implementation.
+The CYSSI Directive Language (CDL) is a lightweight, deterministic command language used to manipulate the canonical project state.
 
-Unlike natural language, CDL directives are never interpreted heuristically.
-
-Their meaning is defined by the CYSSI specification and must be processed identically by every compliant implementation.
+Unlike natural language, CDL directives are never interpreted heuristically. Their syntax and semantics are defined by the CYSSI specification and therefore produce identical results across all compliant implementations.
 
 ---
 
@@ -12,15 +10,13 @@ Their meaning is defined by the CYSSI specification and must be processed identi
 
 CDL exists to eliminate ambiguity.
 
-Natural language is well suited for discussion.
+Natural language is ideal for discussion and reasoning.
 
-Directives are intended for actions that must become canonical project state.
+CDL is intended for actions that must deterministically modify the canonical project state.
 
 ---
 
 # Design Principles
-
-CDL follows four principles.
 
 ## Explicit
 
@@ -30,9 +26,7 @@ Every directive expresses exactly one intention.
 
 ## Deterministic
 
-A directive always produces the same result.
-
-No interpretation is required.
+The same directive always produces the same result.
 
 ---
 
@@ -44,45 +38,52 @@ Directives are simple enough to be written manually.
 
 ## Machine Readable
 
-Every directive can be parsed without relying on language models.
+Directives can be parsed without AI-specific interpretation.
+
+---
+
+## Reversible
+
+Every state-changing directive should be reversible whenever possible.
+
+The framework must preserve enough history to restore previous project states.
 
 ---
 
 # Processing Order
 
-Directives are evaluated before conversational interpretation.
-
 ```mermaid
 flowchart LR
 
 A[Conversation]
-
-A
 -->B[Detect CDL]
 
 B
--->C[Execute Directives]
+-->C[Validate Directives]
 
 C
--->D[Interpret Remaining Conversation]
+-->D[Execute Directives]
 
 D
--->E[Update Project State]
+-->E[Interpret Remaining Conversation]
+
+E
+-->F[Generate Updated Project State]
 ```
+
+CDL directives always execute before conversational interpretation.
 
 ---
 
-# Directive Syntax
+# General Syntax
 
-Every directive begins with the `@` symbol.
-
-General syntax:
+Every directive begins with the `@` character.
 
 ```text
 @directive arguments
 ```
 
-Example:
+Example
 
 ```text
 @lock The framework name is CYSSI.
@@ -90,65 +91,330 @@ Example:
 
 ---
 
-# Available Directives
+# Directive Categories
 
-## @lock
+The directive language is organized into six functional groups.
 
-Creates or updates a Locked Fact.
-
-Example:
-
-```text
-@lock The framework name is CYSSI.
-```
-
----
-
-## @decision
-
-Creates a Decision Log entry.
-
-Example:
-
-```text
-@decision Repository structure becomes canonical.
-```
+- Snapshot Management
+- State Management
+- Facts & Decisions
+- Repository & Documentation
+- History & Comparison
+- Transactions
 
 ---
 
-## @rename
+# Snapshot Management
 
-Renames an existing object.
-
-Example:
-
-```text
-@rename Framework-FRUDEK CYSSI
-```
-
----
-
-## @forget
-
-Removes information from the canonical project state.
-
-Example:
-
-```text
-@forget Temporary brainstorming notes.
-```
-
----
-
-## @snapshot
-
-Requests generation of a new snapshot.
-
-Example:
+## Generate Snapshot
 
 ```text
 @snapshot
 ```
+
+Generates a new canonical snapshot.
+
+---
+
+## Restore Snapshot
+
+```text
+@restore S0012
+```
+
+Restores a previously generated snapshot.
+
+---
+
+## Rollback
+
+```text
+@rollback
+```
+
+Restores the immediately preceding snapshot.
+
+---
+
+## Rollback to Specific Snapshot
+
+```text
+@rollback S0010
+```
+
+Restores an arbitrary earlier snapshot.
+
+---
+
+# State Management
+
+## Generic Setter
+
+```text
+@set project.version 0.14.0
+```
+
+Sets or updates any mutable field.
+
+---
+
+## Remove Field
+
+```text
+@unset project.experimental
+```
+
+Removes a mutable field from the project state.
+
+---
+
+# Facts & Decisions
+
+## Locked Fact
+
+```text
+@lock
+```
+
+Creates a Locked Fact.
+
+Example
+
+```text
+@lock The framework name is CYSSI.
+```
+
+---
+
+## Remove Locked Fact
+
+```text
+@unlock
+```
+
+Removes a Locked Fact.
+
+Example
+
+```text
+@unlock The framework name is FRUDEK.
+```
+
+---
+
+## Replace Locked Fact
+
+```text
+@replace-lock
+Old: The framework name is FRUDEK.
+New: The framework name is CYSSI.
+```
+
+Atomically replaces one Locked Fact with another.
+
+---
+
+## Project Fact
+
+```text
+@fact
+```
+
+Creates a mutable project fact.
+
+---
+
+## Remove Project Fact
+
+```text
+@revert-fact
+```
+
+Removes an existing project fact.
+
+---
+
+## Replace Project Fact
+
+```text
+@replace-fact
+```
+
+Updates a project fact.
+
+---
+
+## Decision
+
+```text
+@decision
+```
+
+Creates a Decision Log entry.
+
+---
+
+## Revert Decision
+
+```text
+@revert-decision D0014
+```
+
+Marks a decision as reverted.
+
+The original entry remains part of project history.
+
+---
+
+## Supersede Decision
+
+```text
+@supersede D0014
+```
+
+Replaces an existing decision with a newer one.
+
+The historical relationship is preserved.
+
+---
+
+# Repository & Documentation
+
+## Repository
+
+```text
+@repository add docs/API.md
+```
+
+Adds an artifact.
+
+```text
+@repository remove docs/API.md
+```
+
+Removes an artifact.
+
+```text
+@repository rename
+```
+
+Renames an artifact.
+
+---
+
+## Components
+
+```text
+@component add
+```
+
+Adds a framework component.
+
+```text
+@component remove
+```
+
+Removes a component.
+
+```text
+@component rename
+```
+
+Renames a component.
+
+---
+
+## Documentation
+
+```text
+@doc complete docs/CDL.md
+```
+
+Marks documentation as completed.
+
+```text
+@doc pending docs/Snapshots.md
+```
+
+Moves documentation back into the pending list.
+
+```text
+@doc remove docs/Old.md
+```
+
+Removes obsolete documentation.
+
+---
+
+# History & Comparison
+
+## History
+
+```text
+@history
+```
+
+Displays the snapshot history.
+
+---
+
+## Diff
+
+```text
+@diff S0012 S0013
+```
+
+Displays semantic differences between two snapshots.
+
+---
+
+## Merge
+
+```text
+@merge S0010 S0012
+```
+
+Creates a merged project state.
+
+Conflict resolution is implementation-specific unless otherwise defined by the Snapshot Merge specification.
+
+---
+
+# Transactions
+
+Transactions allow multiple directives to be executed atomically.
+
+---
+
+## Begin Transaction
+
+```text
+@begin
+```
+
+Starts a transaction.
+
+---
+
+## Commit Transaction
+
+```text
+@commit
+```
+
+Applies every queued modification.
+
+---
+
+## Abort Transaction
+
+```text
+@abort
+```
+
+Cancels the transaction.
+
+No queued changes become part of the project state.
 
 ---
 
@@ -156,23 +422,24 @@ Example:
 
 A compliant implementation must:
 
-1. Detect directives.
+1. Detect CDL directives.
 2. Validate syntax.
-3. Execute directives.
-4. Update the project state.
-5. Continue normal conversation processing.
+3. Validate semantic correctness.
+4. Execute directives in order.
+5. Update the canonical project state.
+6. Continue conversational processing.
 
 ---
 
 # Error Handling
 
-Unknown directives must not terminate processing.
+Unknown directives must never terminate processing.
 
-Instead they should:
+Instead, an implementation should:
 
-- report an error
-- ignore the directive
-- continue processing
+- report the error,
+- ignore the invalid directive,
+- continue processing remaining directives.
 
 ---
 
@@ -180,22 +447,23 @@ Instead they should:
 
 Directive execution has higher priority than conversational interpretation.
 
-When both produce conflicting results, the directive always wins.
+Whenever a conflict exists, the directive always wins.
 
 ---
 
 # Relationship to Other Components
 
-CDL interacts with:
+CDL interacts directly with:
 
 - Project Contract
 - Locked Facts
 - Decision Log
 - Snapshot Generator
+- Snapshot Specification
 
-It does not replace natural conversation.
+Natural conversation remains available for discussion and reasoning.
 
-Instead, it provides deterministic control over the canonical project state.
+CDL exists exclusively for deterministic state management.
 
 ---
 
@@ -203,12 +471,16 @@ Instead, it provides deterministic control over the canonical project state.
 
 Future versions of CYSSI may introduce additional directives.
 
-Existing directives should preserve their behaviour whenever possible.
+Existing directives should preserve backwards compatibility whenever possible.
+
+Unknown directives must be ignored by older implementations.
 
 ---
 
 # Summary
 
-The CYSSI Directive Language provides a deterministic interface between human intent and the canonical project state.
+The CYSSI Directive Language is the deterministic control interface of the CYSSI Framework.
 
-By separating explicit commands from natural language, CDL enables reproducible project management across conversations, AI models and software implementations.
+It separates explicit project management from natural conversation and enables reproducible, reversible and model-independent manipulation of the canonical project state.
+
+By introducing state management, rollback capabilities, history navigation and transactional processing, CDL evolves from a simple command language into a complete **Project State Management Language (PSML)** for long-term Human-AI collaboration.
