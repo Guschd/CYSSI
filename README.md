@@ -58,7 +58,7 @@ Architecture
       ┌─────────────┴─────────────┐
       │                           │
 Directive Processing        Information Extraction
-      │                           │
+
       └─────────────┬─────────────┘
                     ▼
                Validation
