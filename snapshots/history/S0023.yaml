@@ -1,0 +1,65 @@
+```yaml
+#
+# CYSSI Snapshot
+#
+# Canonical project state change.
+#
+# Snapshot ID: S0023
+#
+
+snapshot:
+
+  id: S0023
+  type: change
+  version: 0.21.2
+  status: LOCKED
+
+history:
+
+  predecessor: S0022
+
+changes:
+
+  locked_facts:
+
+    add:
+
+      - Every canonical snapshot SHALL terminate with the standardized comment block:
+        "# End of Snapshot #".
+      - The snapshot type SHALL be defined exclusively by snapshot.type.
+      - Snapshot boundary markers SHALL NOT encode snapshot semantics.
+
+decision_log:
+
+  add:
+
+    - id: D0029
+      status: accepted
+      decision: >
+        Every canonical snapshot SHALL terminate with the standardized
+        comment block "# End of Snapshot #".
+
+    - id: D0030
+      status: accepted
+      decision: >
+        The snapshot type SHALL be determined exclusively by
+        snapshot.type. Transport markers SHALL remain type-neutral.
+
+change_log:
+
+  - Added canonical end-of-snapshot marker as a Locked Fact.
+  - Defined snapshot.type as the sole normative source of snapshot type.
+  - Declared transport boundary markers to be semantically neutral.
+
+metadata:
+
+  category: specification_update
+
+  reason: >
+    Eliminate redundant type information from transport markers and
+    establish a single canonical representation for snapshot type.
+
+#
+# End of Snapshot
+#
+```
