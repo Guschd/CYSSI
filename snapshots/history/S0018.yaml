@@ -1,3 +1,4 @@
+```yaml
 #
 # CYSSI Snapshot
 #
@@ -268,4 +269,5 @@ history:
 
   predecessor: S0016
   successor:
-  change_summary: First fully consolidated snapshot after repository restructuring.
+  change_summary: First fully consolidated snapshot after repository
+```
