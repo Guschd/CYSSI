@@ -1,3 +1,4 @@
+```yaml
 #
 # CYSSI Change Snapshot
 #
@@ -47,3 +48,4 @@ changes:
     - Introduced the Closed-Loop Principle.
     - Added the normative snapshot philosophy.
     - Defined snapshots as canonical reasoning states instead of backups.
+```
