@@ -1,3 +1,4 @@
+```yaml
 #
 # CYSSI Change Snapshot
 #
@@ -62,3 +63,4 @@ changes:
     - Introduced the Traceability Principle.
     - Defined external snapshot persistence as a normative requirement.
     - Separated canonical project state from project history.
+```
