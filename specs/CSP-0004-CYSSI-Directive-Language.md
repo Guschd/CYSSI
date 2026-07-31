@@ -31,7 +31,6 @@ This specification defines:
 -   conformance requirements.
 
 ------------------------------------------------------------------------
-
 # 3. Terminology
 
 ## Directive
@@ -43,10 +42,45 @@ implementation.
 
 The collection of directives supplied for a processing cycle.
 
+The standardized CDL core directive set consists of the following
+directives:
+
+### State Operations
+
+- `@set`
+- `@unset`
+- `@add`
+- `@remove`
+- `@replace`
+- `@move`
+- `@rename`
+
+### Snapshot Operations
+
+- `@snapshot`
+- `@restore`
+- `@rollback`
+
+### History Operations
+
+- `@history`
+- `@diff`
+- `@merge`
+
+### Validation Operations
+
+- `@validate`
+- `@check`
+
+### Transaction Operations
+
+- `@begin`
+- `@commit`
+- `@abort`
+
 ## Conversational Inference
 
 Reasoning performed after deterministic directive processing.
-
 ------------------------------------------------------------------------
 
 # 4. Core Principles
@@ -122,14 +156,6 @@ This specification complements:
 -   CSP-0003 Locked Facts Specification
 -   CSP-0010 Snapshot Transport Format
 -   CSP-0011 Snapshot Replay Specification
-
-------------------------------------------------------------------------
-
-# Future Work
-
-Future revisions MAY standardize individual directive keywords,
-namespaces and extension mechanisms while preserving deterministic
-processing semantics.
 
 ------------------------------------------------------------------------
 
