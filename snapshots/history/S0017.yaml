@@ -1,3 +1,4 @@
+```yaml
 # CYSSI Snapshot S0017
 
 ## Snapshot Information
@@ -43,3 +44,4 @@ RFC-style terminology remains reserved for the detailed documentation inside the
 - Problem-first narrative adopted.
 - Simplified explanations for first-time readers.
 - Repository documentation remains technically accurate while becoming significantly more approachable.
+```
