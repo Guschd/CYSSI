@@ -1,0 +1,102 @@
+```yaml
+#
+# CYSSI Snapshot
+#
+# Canonical project state change.
+#
+# Snapshot ID: S0022
+#
+
+snapshot:
+
+  id: S0022
+  type: change
+  version: 0.21.1
+  status: LOCKED
+
+history:
+
+  predecessor: S0021
+
+changes:
+
+  locked_facts:
+
+    replace:
+
+      - old: >
+          Change snapshots require a base snapshot.
+        new: >
+          Change Snapshots reference their predecessor through
+          history.predecessor.
+
+    normalize_indentation: true
+
+  repository:
+
+    specs:
+
+      add:
+
+        - CSP-0010-Snapshot-Transport-Format.md
+        - CSP-0011-Snapshot-Replay-Specification.md
+
+      rename:
+
+        - from: CSP-0003-Locked-Facts.md
+          to: CSP-0003-Locked-Facts-Specification.md
+
+        - from: CSP-0004-CDL.md
+          to: CSP-0004-CYSSI-Directive-Language.md
+
+  documentation:
+
+    completed:
+
+      add:
+
+        - specs/CSP-0001-Snapshot-Specification.md
+        - specs/CSP-0002-Project-Contract.md
+        - specs/CSP-0003-Locked-Facts-Specification.md
+        - specs/CSP-0004-CYSSI-Directive-Language.md
+        - specs/CSP-0010-Snapshot-Transport-Format.md
+
+    pending:
+
+      remove:
+
+        - specs/CSP-0001-Snapshot-Specification.md
+        - specs/CSP-0002-Project-Contract.md
+        - specs/CSP-0003-Locked-Facts.md
+        - specs/CSP-0004-CDL.md
+
+  decision_log:
+
+    normalize_indentation:
+
+      - D0025
+
+metadata:
+
+  category: canonical_cleanup
+
+  reason: >
+    Correct formatting inconsistencies and align repository metadata
+    with the current canonical specification set. This snapshot
+    introduces no architectural or semantic changes.
+
+change_log:
+
+  - Corrected inconsistent indentation in locked_facts.
+  - Corrected indentation of Decision D0025.
+  - Replaced obsolete base snapshot wording with history.predecessor.
+  - Added CSP-0010-Snapshot-Transport-Format.md.
+  - Added CSP-0011-Snapshot-Replay-Specification.md.
+  - Updated canonical specification filenames.
+  - Updated documentation status to match completed specifications.
+  - No changes to canonical project semantics.
+
+#
+# End of Change Snapshot
+#
+```
