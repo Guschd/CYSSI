@@ -1,4 +1,4 @@
-# CSP-0002 --- Project Contract
+# CSP-0002 - Project Contract
 
   Field           Value
   --------------- ---------------------------
