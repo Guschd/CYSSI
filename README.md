@@ -9,7 +9,7 @@
 
 ---
 
-## Every AI project eventually hits the same wall.
+## Every AI project eventually hits the same boerder.
 
 You start a new conversation.
 
